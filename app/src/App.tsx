@@ -2,22 +2,24 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css'
 import { Analize } from './pages/analize'
 import { Importer } from './pages/importer'
+import { useState } from 'react';
+import { Player } from './models/Player';
+import { Menu } from './components/menu';
 
 function App() {
+  const [ players, setPlayers ] = useState<Player[]>([]);
 
+  console.log(players);
+  
   const router = createBrowserRouter([
-    { path: "/", element: <div /> },
-    { path: "/import", element: <Importer /> },
-    { path: "/analize", element: <Analize /> },
+    { path: "/", element: <Menu /> },
+    { path: "/import", element: <><Menu /><Importer setPlayers={setPlayers} /></> },
+    { path: "/analize", element: <><Menu /><Analize players={players} /></> },
   ]);
 
   return (
     <>
       <h1>Megafuts - análise de jogadores</h1>
-      <ul>
-        <li><a href='/import'>Importar dados</a></li>
-        <li><a href='/analize'>Analisar jogadores</a></li>
-      </ul>
       <RouterProvider router={router} />
     </>
   )
