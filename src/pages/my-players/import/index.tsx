@@ -1,5 +1,6 @@
 import { Box, Button, Modal, TextareaAutosize, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
+import { Player } from "../../../models/Player";
 
 const style = {
   position: 'absolute',
@@ -13,7 +14,7 @@ const style = {
 };
 
 interface ImportType {
-  getData: (data: string) => void;
+  getData: (data: Player[]) => void;
   openImport: boolean;
   setOpenImport: (value: boolean) => void;
 }
@@ -24,6 +25,11 @@ export function Import({ getData, openImport, setOpenImport }: ImportType) {
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setPlayersData(event.target.value);
   }
+  
+  const executeImport = () => {
+    getData(JSON.parse(playersData).Dados);
+    setOpenImport(false);
+  }
 
   return (
     <Modal open={openImport} onClose={() => setOpenImport(false)} >
@@ -31,8 +37,8 @@ export function Import({ getData, openImport, setOpenImport }: ImportType) {
         <Typography id="modal-modal-title" variant="h6" component="h2">
           Importar jogadores
         </Typography>
-        <Button onClick={() => getData(playersData)}>Executar importação</Button>
-        <TextareaAutosize style={{ width: '100%' }} minRows={10} onChange={onChange} />
+        <Button onClick={executeImport}>Executar importação</Button>
+        <TextareaAutosize style={{ width: '100%' }} minRows={10} maxRows={20} onChange={onChange} />
       </Box>
     </Modal>
 
