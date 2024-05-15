@@ -27,6 +27,7 @@ export function Import({ getData, openImport, setOpenImport }: ImportType) {
   }
   
   const executeImport = () => {
+    localStorage.setItem('my-players', playersData);
     getData(JSON.parse(playersData).Dados);
     setOpenImport(false);
   }

@@ -8,6 +8,13 @@ export function MyPlayers() {
   const [ openImport, setOpenImport ] = useState(false);
   const [ playersData, setPlayersData ] = useState<Player[]>([]);
 
+  if (!playersData.length) {
+    const data = localStorage.getItem('my-players');
+    if (data) {
+      setPlayersData(JSON.parse(data).Dados);
+    }
+  }
+
   return (
     <Box sx={{ display: 'flex', margin: '20px' }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
