@@ -12,7 +12,7 @@ function App() {
 
   const router = createBrowserRouter([
     { path: "/", element: <Menu /> },
-    { path: "/meus-jogadores", element: <><Menu /><MyPlayers /></> },
+    { path: "/meus-jogadores", element: <div style={{ display: 'flex' }}><Menu /><MyPlayers /></div> },
     { path: "/import", element: <><Menu /><Importer setPlayers={setPlayers} /></> },
     { path: "/analize", element: <><Menu /><Analize players={players} /></> },
   ]);

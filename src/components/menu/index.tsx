@@ -9,8 +9,8 @@ export function Menu() {
             Megafuts - análise de jogadores | 
           </Typography>
         <Link to={`/meus-jogadores`}>Meus jogadores</Link>
-        <Link to={`/import`}>Importar dados</Link>
-        <Link to={`/analize`}>Analisar jogadores</Link>
+        -<Link to={`/import`}>Importar dados</Link>
+        -<Link to={`/analize`}>Analisar jogadores</Link>
       </Container>
     </AppBar>
   )
