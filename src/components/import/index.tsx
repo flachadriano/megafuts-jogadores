@@ -1,6 +1,6 @@
 import { Box, Button, Modal, TextareaAutosize, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
-import { Player } from "../../../models/Player";
+import { Player } from "../../models/Player";
 
 const style = {
   position: 'absolute',
@@ -14,12 +14,13 @@ const style = {
 };
 
 interface ImportType {
+  tag: string;
   getData: (data: Player[]) => void;
   openImport: boolean;
   setOpenImport: (value: boolean) => void;
 }
 
-export function Import({ getData, openImport, setOpenImport }: ImportType) {
+export function Import({ tag, getData, openImport, setOpenImport }: ImportType) {
   const [ playersData, setPlayersData ] = useState('');
 
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -27,7 +28,7 @@ export function Import({ getData, openImport, setOpenImport }: ImportType) {
   }
   
   const executeImport = () => {
-    localStorage.setItem('my-players', playersData);
+    localStorage.setItem(tag, playersData);
     getData(JSON.parse(playersData).Dados);
     setOpenImport(false);
   }

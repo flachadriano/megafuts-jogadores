@@ -1,5 +1,4 @@
 import { Tooltip } from "@mui/material";
-import { COLORS } from "../../../../constants/Colors";
 
 interface PercentType {
   val1: string;
@@ -11,8 +10,8 @@ export default function Percent({ val1, val2 }: PercentType) {
   const num2 = Number.parseInt(val2);
   const val = num1 / (num1 + num2);
   const percent = Math.round(val * 100);
-  let color = percent > 80 ? percent > 90 ? COLORS.blue : COLORS.green : COLORS.white;
-  if (percent < 60) color = COLORS.yellow
+  let color = percent > 80 ? percent > 90 ? '#6fbcdc' : '#6fdcab' : '#fff';
+  if (percent < 60) color = '#dcab6f'
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: color }}>

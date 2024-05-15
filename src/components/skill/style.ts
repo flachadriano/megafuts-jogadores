@@ -1,36 +1,28 @@
 import styled from 'styled-components'
+import { COLORS } from '../../constants/Colors'
 
 export const Container = styled.div`
-  width: 40px;
+  width: 25px;
   display: flex;
 `
 
-export const Indice = styled.div`
-  width: 25px;
+export const BaseLabel = styled.span`
   display: flex;
+  flex: 1;
   justify-content: center;
+  border-radius: 5px;
 `
 
-export const HighPotential = styled.div`
-  background-color: #3b70a2;
-  border-radius: 25px;
-  width: 25px;
-  display: flex;
-  justify-content: center;
+export const Indice = styled(BaseLabel)``
+
+export const Maxed = styled(BaseLabel)`
+  background-color: ${COLORS.red};
 `
 
-export const LowerPotential = styled.span`
-  background-color: #cdb517;
-  border-radius: 25px;
-  width: 25px;
-  display: flex;
-  justify-content: center;
+export const HighPotential = styled(BaseLabel)`
+  background-color: ${COLORS.blue};
 `
 
-export const Maxed = styled.span`
-  background-color: #f52d2d;
-  border-radius: 25px;
-  width: 25px;
-  display: flex;
-  justify-content: center;
+export const LowerPotential = styled(BaseLabel)`
+  background-color: ${COLORS.yellow};
 `

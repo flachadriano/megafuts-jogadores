@@ -1,11 +1,11 @@
-import { Box, Button } from "@mui/material";
 import { useState } from "react";
 import { Player } from "../../models/Player";
-import List from "./list";
+import { Box, Button } from "@mui/material";
 import { Import } from "../../components/import";
+import List from "./list";
 
-export function MyPlayers() {
-  const tag = 'my-players';
+export default function Market() {
+  const tag = 'market';
   const [ openImport, setOpenImport ] = useState(false);
   const [ playersData, setPlayersData ] = useState<Player[]>([]);
 

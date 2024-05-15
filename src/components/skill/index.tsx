@@ -2,11 +2,12 @@ import { Container, HighPotential, Indice, LowerPotential, Maxed } from "./style
 
 interface SkillType {
   indice: string | undefined;
-  potential: string | undefined;
+  high: string | undefined;
+  low: string | undefined;
   maxed: string | undefined;
 }
 
-export function Skill({ indice, potential, maxed }: SkillType) {
+export function Skill({ indice, high, low, maxed }: SkillType) {
   const renderIndice = () => {
     if (maxed == 'True') {
       return <Maxed>{ indice }</Maxed>
@@ -15,10 +16,10 @@ export function Skill({ indice, potential, maxed }: SkillType) {
   }
 
   const renderPotential = () => {
-    if (potential?.startsWith('H')) {
-      return <HighPotential><span>{ potential[1] }</span></HighPotential>
-    } else if (potential?.startsWith('L')) {
-      return <LowerPotential>{ potential[1] }</LowerPotential>
+    if (high == 'True') {
+      return <HighPotential />
+    } else if (low == 'True') {
+      return <LowerPotential />
     }
     return '';
   }
