@@ -12,7 +12,11 @@ export default function Market() {
   if (!playersData.length) {
     const data = localStorage.getItem(tag);
     if (data) {
-      setPlayersData(JSON.parse(data).Dados);
+      try {
+        setPlayersData(JSON.parse(data).Dados);
+      } catch {
+        console.log('error');
+      }
     }
   }
 

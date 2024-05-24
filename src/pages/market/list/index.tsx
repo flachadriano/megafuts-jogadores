@@ -20,6 +20,7 @@ const columns: GridColDef[] = [
   { field: 'IndiceDesarme', headerName: 'DES', width: 50, sortComparator: sortByNumber, renderCell: (params) => <Skill indice={params.row.IndiceDesarme} high={params.row.PotencialAltoDesarme} low={params.row.PotencialBaixoDesarme} maxed={params.row.MaximizadoDesarme} /> },
   { field: 'IndiceChute', headerName: 'CHU', width: 50, sortComparator: sortByNumber, renderCell: (params) => <Skill indice={params.row.IndiceChute} high={params.row.PotencialAltoChute} low={params.row.PotencialBaixoChute} maxed={params.row.MaximizadoChute} /> },
   { field: 'IndiceDefesaGol', headerName: 'DFG', width: 50, sortComparator: sortByNumber, renderCell: (params) => <Skill indice={params.row.IndiceDefesaGol} high={params.row.PotencialAltoDefesaGol} low={params.row.PotencialBaixoDefesaGol} maxed={params.row.MaximizadoDefesaGol} /> },
+  { field: 'ValorNegociacao', headerName: 'Lance', width: 120 },
 ];
 
 interface ListType {

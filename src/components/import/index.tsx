@@ -28,9 +28,13 @@ export function Import({ tag, getData, openImport, setOpenImport }: ImportType) 
   }
   
   const executeImport = () => {
-    localStorage.setItem(tag, playersData);
-    getData(JSON.parse(playersData).Dados);
-    setOpenImport(false);
+    try {
+      localStorage.setItem(tag, playersData);
+      getData(JSON.parse(playersData).Dados);
+      setOpenImport(false);
+    } catch {
+      localStorage.removeItem(tag);
+    }
   }
 
   return (

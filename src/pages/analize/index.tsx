@@ -54,16 +54,16 @@ export function Analize({ players }: AnalizeType) {
         <td>{ player.Camisa }</td>
         <td>{ player.NomeAbreviado }</td>
         <td>{ player.Idade }</td>
-        <td><Skill indice={player.IndiceVelocidade} potential={player.PotencialVelocidadeCalculado} maxed={player.MaximizadoVelocidade} /></td>
-        <td><Skill indice={ player.IndiceResistencia } potential={player.PotencialResistenciaCalculado} maxed={player.MaximizadoResistencia} /></td>
-        <td><Skill indice={ player.IndiceInteligencia } potential={player.PotencialInteligenciaCalculado} maxed={player.MaximizadoInteligencia} /></td>
-        <td><Skill indice={ player.IndicePasse } potential={player.PotencialPasseCalculado} maxed={player.MaximizadoPasse} /></td>
-        <td><Skill indice={ player.IndicePasseLongo } potential={player.PotencialPasseLongoCalculado} maxed={player.MaximizadoPasseLongo} /></td>
-        <td><Skill indice={ player.IndiceControleBola } potential={player.PotencialControleBolaCalculado} maxed={player.MaximizadoControleBola} /></td>
-        <td><Skill indice={ player.IndiceAgressividade } potential={player.PotencialAgressividadeCalculado} maxed={player.MaximizadoAgressividade} /></td>
-        <td><Skill indice={ player.IndiceDesarme } potential={player.PotencialDesarmeCalculado} maxed={player.MaximizadoDesarme} /></td>
-        <td><Skill indice={ player.IndiceChute } potential={player.PotencialChuteCalculado} maxed={player.MaximizadoChute} /></td>
-        <td><Skill indice={ player.IndiceDefesaGol } potential={player.PotencialDefesaGolCalculado} maxed={player.MaximizadoDefesaGol} /></td>
+        <td><Skill indice={player.IndiceVelocidade} high={player.PotencialAltoVelocidade} low={player.PotencialBaixoVelocidade} maxed={player.MaximizadoVelocidade} /></td>
+        <td><Skill indice={player.IndiceResistencia} high={player.PotencialAltoResistencia} low={player.PotencialBaixoResistencia} maxed={player.MaximizadoResistencia} /></td>
+        <td><Skill indice={player.IndiceInteligencia} high={player.PotencialAltoInteligencia} low={player.PotencialBaixoInteligencia} maxed={player.MaximizadoInteligencia} /></td>
+        <td><Skill indice={player.IndicePasse} high={player.PotencialAltoPasse} low={player.PotencialBaixoPasse} maxed={player.MaximizadoPasse} /></td>
+        <td><Skill indice={player.IndicePasseLongo} high={player.PotencialAltoPasseLongo} low={player.PotencialBaixoPasseLongo} maxed={player.MaximizadoPasseLongo} /></td>
+        <td><Skill indice={player.IndiceControleBola} high={player.PotencialAltoControleBola} low={player.PotencialBaixoControleBola} maxed={player.MaximizadoControleBola} /></td>
+        <td><Skill indice={player.IndiceAgressividade} high={player.PotencialAltoAgressividade} low={player.PotencialBaixoAgressividade} maxed={player.MaximizadoAgressividade} /></td>
+        <td><Skill indice={player.IndiceDesarme} high={player.PotencialAltoDesarme} low={player.PotencialBaixoDesarme} maxed={player.MaximizadoDesarme} /></td>
+        <td><Skill indice={player.IndiceChute} high={player.PotencialAltoChute} low={player.PotencialBaixoChute} maxed={player.MaximizadoChute} /></td>
+        <td><Skill indice={player.IndiceDefesaGol} high={player.PotencialAltoDefesaGol} low={player.PotencialBaixoDefesaGol} maxed={player.MaximizadoDefesaGol} /></td>
         <td>{ player.IndiceForma }</td>
         <td>{ player.IndiceExperiencia }</td>
         <td>{ calcPercent(player.OverallTomadaDecisaoCerta, player.OverallTomadaDecisaoErrada) }%</td>
