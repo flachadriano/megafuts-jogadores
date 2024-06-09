@@ -20,7 +20,7 @@ export function MyPlayers() {
     <Box sx={{ display: 'flex', margin: '20px' }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <Button onClick={() => setOpenImport(true)}>Importar jogadores</Button>
-        <List players={playersData} />
+        <List players={playersData} setPlayers={setPlayersData} />
       </Box>
       <Import tag={tag} openImport={openImport} setOpenImport={setOpenImport} getData={setPlayersData} />
     </Box>
