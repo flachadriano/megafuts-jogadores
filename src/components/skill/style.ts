@@ -17,12 +17,15 @@ export const Indice = styled(BaseLabel)``
 
 export const Maxed = styled(BaseLabel)`
   background-color: ${COLORS.red};
+  padding-left: 5px;
 `
 
 export const HighPotential = styled(BaseLabel)`
   background-color: ${COLORS.blue};
-`
+  margin-left: 5px;
+`;
 
 export const LowerPotential = styled(BaseLabel)`
   background-color: ${COLORS.yellow};
+  margin-left: 5px;
 `

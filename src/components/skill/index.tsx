@@ -10,9 +10,19 @@ interface SkillType {
 export function Skill({ indice, high, low, maxed }: SkillType) {
   const renderIndice = () => {
     if (maxed == 'True') {
-      return <Maxed>{ indice }</Maxed>
+      return (
+        <Maxed>
+          { indice }
+          { renderPotential() }
+        </Maxed>
+      );
     }
-    return <Indice>{ indice }</Indice>;
+    return (
+      <Indice>
+        { indice }
+        { renderPotential() }
+      </Indice>
+    );
   }
 
   const renderPotential = () => {
@@ -27,7 +37,6 @@ export function Skill({ indice, high, low, maxed }: SkillType) {
   return (
     <Container>
       { renderIndice() }
-      { renderPotential() }
     </Container>
   )
 }
